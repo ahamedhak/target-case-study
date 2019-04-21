@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.0.3.RELEASE'
+	id 'java'
+}
+
+jar {
+	enabled = true
+    baseName = 'product-demo'
+    version =  "1.0"
+}
+
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.targert'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'org.projectlombok', name: 'lombok'
+	compile 'org.json:json:20171018'
+}
