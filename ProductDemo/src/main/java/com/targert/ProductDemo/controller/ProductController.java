@@ -1,5 +1,7 @@
 package com.targert.ProductDemo.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +33,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/{id}")
-	public ResponseEntity<Product> updateByPut(@PathVariable("id") long id,@RequestBody Product product){
+	public ResponseEntity<Product> updateByPut(@PathVariable("id") long id,@RequestBody @Valid Product product){
 		product.setId(id);
 		Product newProduct = service.updateProduct(product);
 		if(newProduct == null)

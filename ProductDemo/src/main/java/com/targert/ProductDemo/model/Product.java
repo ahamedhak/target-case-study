@@ -1,5 +1,8 @@
 package com.targert.ProductDemo.model;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
@@ -16,6 +19,8 @@ public class Product {
 	private String name;
 	
 	@JsonProperty("current_price")
+	@Valid
+	@NotNull
 	private Price currentPrice;
 
 }
